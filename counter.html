@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button id="incre">incre</button>
+        <p id="display">0</p>
+        <button id="decre">decre</button>
+        <button id="resetdis">reset</button>
+    </div>
+    <script>
+        let incre= document.getElementById("incre");
+        let decre = document.getElementById("decre");
+        let display = document.getElementById("display");
+        let resetdis = document.getElementById("resetdis");
+        let value = 0;
+
+        function increment(){
+            value +=1
+            if(value>=0){
+            display.textContent = value;
+            }else if(value ===1000){
+                display.textContent= "1000 Limit";
+            }
+        } 
+
+        function decrement(){
+            value -=1
+            if(value<0){
+                display.textContent = "invalid";
+            }else{
+            
+            display.textContent = value;
+            }
+        }
+        
+        function resetnumber(){
+            value = 0
+            display.textContent = value;
+        }
+
+        incre.addEventListener("click",increment);
+        decre.addEventListener("click",decrement);
+        resetdis.addEventListener("click", resetnumber);
+
+    </script>
+</body>
+</html>
